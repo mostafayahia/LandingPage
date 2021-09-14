@@ -81,6 +81,7 @@ document.querySelector("#navbar__list").appendChild(fragment);
 
 // Scroll to section on link click
 document.querySelector('#navbar__list').addEventListener('click', function (event) {
+    event.preventDefault();
     const item = event.target;
     if (item.nodeName === "LI") {
         const selectedSection = document.querySelector(`#${item.getAttribute('nav-data')}`);
