@@ -61,9 +61,9 @@ for (const section of document.querySelectorAll('section')) {
 
     // create a menu item
     const menuItem = document.createElement('li');
-    
+
     menuItem.classList = ["menu__link"];
-    
+
     // set nav-data attribute for each of menu item to section id
     menuItem.setAttribute("nav-data", section.id);
 
