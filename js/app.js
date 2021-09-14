@@ -38,6 +38,8 @@ const tolerance = document.querySelectorAll('section')[0].clientHeight * 0.1;
 
 // Add class 'active' to section when near top of viewport
 function moveActiveClass(fromElement, toElement, activeClassName = "active") {
+    if (fromElement === toElement)
+        return;
     fromElement.classList.remove(activeClassName);
     toElement.classList.add(activeClassName);
 }
