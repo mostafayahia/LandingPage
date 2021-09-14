@@ -75,6 +75,17 @@ for (const section of document.querySelectorAll('section')) {
 document.querySelector("#navbar__list").appendChild(fragment);
 
 // Scroll to section on link click
+document.querySelector('#navbar__list').addEventListener('click', function (event) {
+    const item = event.target;
+    if (item.nodeName === "LI") {
+        const selectedSection = document.querySelector(`#${item.getAttribute('nav-data')}`);
+
+        window.scroll({
+            top: selectedSection.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+});
 
 // Set sections as active
 
