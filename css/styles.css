@@ -71,7 +71,7 @@ section {
 }
 
 .navbar__menu li {
-    display: inline-block;
+    display: inline-block !important; /* force this style for navbar menu item */
 }
 
 .navbar__menu .menu__link {
