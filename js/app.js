@@ -17,7 +17,7 @@
  * Define Global Variables
  * 
 */
-
+const tolerance = document.querySelectorAll('section')[0].clientHeight * 0.1;
 
 /**
  * End Global Variables
@@ -84,7 +84,7 @@ document.querySelector('#navbar__list').addEventListener('click', function (even
         const selectedSection = document.querySelector(`#${item.getAttribute('nav-data')}`);
 
         window.scroll({
-            top: selectedSection.offsetTop,
+            top: selectedSection.offsetTop - tolerance,
             behavior: 'smooth'
         });
     }
@@ -101,8 +101,6 @@ const sectionDataArray = [];
 for (const section of document.querySelectorAll('section')) {
     sectionDataArray.push({ top: section.offsetTop, section });
 };
-
-const tolerance = document.querySelectorAll('section')[0].clientHeight * 0.1;
 
 
 document.addEventListener('scroll', function (event) {
