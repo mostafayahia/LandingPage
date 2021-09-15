@@ -18,6 +18,7 @@
  * 
 */
 const tolerance = document.querySelectorAll('section')[0].clientHeight * 0.1;
+const intersectionThreshold = 0.7;
 
 /**
  * End Global Variables
@@ -94,33 +95,20 @@ document.querySelector('#navbar__list').addEventListener('click', function (even
 });
 
 // Set sections as active
-let activeSection = document.querySelectorAll('section')[0]; /* default value */
 
-// construct section tops array
-/*
-  array of sectionData objects which is consist of {top: number, section: sectionElement}
-*/
-const sectionDataArray = [];
-for (const section of document.querySelectorAll('section')) {
-    sectionDataArray.push({ top: section.offsetTop, section });
-};
-
-
-document.addEventListener('scroll', function (event) {
-    // looping in sectionDataArray in reverse order
-    for (let i = sectionDataArray.length - 1; i >= 0; i--) {
-        const sectionData = sectionDataArray[i];
-
-        if (window.pageYOffset >= (sectionData.top - tolerance)) {
-            // move active class from the old one and assign it to the new one
-            moveActiveClass(activeSection, sectionData.section);
-
-            // now assign active section to the section in the our section data object
-            activeSection = sectionData.section;
-
-            break;
-        }
-    }
+let observer = new IntersectionObserver(function (entries) {
+    const observedEntry = entries[0];
+    const classList = observedEntry.target.classList;
+    observedEntry.isIntersecting ? classList.add('active') : classList.remove('active');
+}, {
+    root: document.querySelector("#main"),
+    threshold: intersectionThreshold
 });
+
+for (const section of document.querySelectorAll('section')) {
+    observer.observe(section);
+}
+
+
 
 
