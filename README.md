@@ -10,7 +10,7 @@ active section when scrolling.
 * [Run App](#run-app)
 
 ## Starter-Code
-You can have a copy of the starter code of the project from [here](https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page)
+You can have a copy of the starter code of the project from [here](https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page).
 ## Dependencies
 I've done this project using the help of [MDN Web Docs](https://developer.mozilla.org/en-US/) & [Stack Overflow](https://stackoverflow.com/).<br><br>
 
