@@ -17,7 +17,6 @@
  * Define Global Variables
  * 
 */
-const tolerance = document.querySelectorAll('section')[0].clientHeight * 0.1;
 const intersectionThreshold = 0.7;
 
 /**
@@ -87,8 +86,8 @@ document.querySelector('#navbar__list').addEventListener('click', function (even
     if (item.nodeName === "LI") {
         const selectedSection = document.querySelector(`#${item.getAttribute('nav-data')}`);
 
-        window.scroll({
-            top: selectedSection.offsetTop - tolerance,
+        window.scrollBy({
+            top: selectedSection.getBoundingClientRect().y,
             behavior: 'smooth'
         });
     }
