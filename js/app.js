@@ -38,12 +38,7 @@ const intersectionThreshold = 0.7;
 
 
 // Add class 'active' to section when near top of viewport
-function moveActiveClass(fromElement, toElement, activeClassName = "active") {
-    if (fromElement === toElement)
-        return;
-    fromElement.classList.remove(activeClassName);
-    toElement.classList.add(activeClassName);
-}
+
 
 // Scroll to anchor ID using scrollTO event
 
