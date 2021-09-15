@@ -96,9 +96,9 @@ let observer = new IntersectionObserver(function (entries) {
     const classList = observedEntry.target.classList;
     observedEntry.isIntersecting ? classList.add('active') : classList.remove('active');
 }, {
-    root: document.querySelector("#main"),
-    threshold: intersectionThreshold
-});
+        root: document.querySelector("#main"),
+        threshold: intersectionThreshold
+    });
 
 for (const section of document.querySelectorAll('section')) {
     observer.observe(section);
